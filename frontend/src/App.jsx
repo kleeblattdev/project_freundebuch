@@ -8,6 +8,7 @@ import Form from "./pages/Form";
 
 //components import
 import Navigation from "./components/navigation/Navigation";
+import Footer from "./components/footer/Footer";
 
 import "./App.css";
 
@@ -21,6 +22,7 @@ function App() {
 					<Route path="/:friend" element={<Details />} />
 					<Route path="/addFriend" element={<Form />} />
 				</Routes>
+				<Footer />
 			</BrowserRouter>
 		</div>
 	);

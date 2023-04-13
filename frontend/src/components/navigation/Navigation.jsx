@@ -1,10 +1,12 @@
 import { NavLink } from "react-router-dom";
 
+import "./navigation.scss";
+
 const Navigation = () => {
 	return (
 		<nav>
 			<NavLink to="/">Home</NavLink>
-			<NavLink to="/addFriend">add a new friend</NavLink>
+			<NavLink to="/addFriend">Add a new friend</NavLink>
 		</nav>
 	);
 };
