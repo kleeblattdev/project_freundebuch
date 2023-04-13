@@ -1,8 +1,18 @@
 import "./addFriend.scss";
 
 const AddFriend = () => {
-	const submit = (e) => {
+	const url = import.meta.env.VITE_BACKEND + import.meta.env.VITE_API_VERSION;
+
+	const submit = async (e) => {
 		e.preventDefault();
+
+		const form = new FormData(e.target);
+		const response = await fetch(url + "/friends", {
+			method: "POST",
+			body: form,
+		});
+		console.log(response);
+		/* e.target.reset(); */
 	};
 
 	return (
