@@ -12,7 +12,7 @@ const AddFriend = () => {
 			body: form,
 		});
 		console.log(response);
-		/* e.target.reset(); */
+		e.target.reset();
 	};
 
 	return (

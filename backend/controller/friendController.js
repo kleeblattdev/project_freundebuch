@@ -4,7 +4,7 @@ import { getDb } from "../utils/db.js";
 const COL = "friends";
 
 export const getFriends = async (req, res) => {
-	const db = getDb();
+	const db = await getDb();
 	const docs = await db.collection(COL).find().toArray();
 	if (docs === null) res.end();
 	else {
