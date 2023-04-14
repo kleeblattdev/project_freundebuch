@@ -19,7 +19,7 @@ function App() {
 				<Navigation />
 				<Routes>
 					<Route path="/" element={<Home />} />
-					<Route path="/:friend" element={<Details />} />
+					<Route path="/:friendId" element={<Details />} />
 					<Route path="/addFriend" element={<Form />} />
 				</Routes>
 				<Footer />

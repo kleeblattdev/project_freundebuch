@@ -15,7 +15,10 @@ const FriendList = () => {
 	useEffect(() => {
 		fetch(url + "/friends")
 			.then((res) => res.json())
-			.then((data) => setFriend(data));
+			.then((data) => {
+				setFriend(data);
+				console.log(data);
+			});
 	}, [refresh]);
 
 	return (

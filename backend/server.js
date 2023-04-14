@@ -5,6 +5,7 @@ import "./config/config.js";
 import {
 	addFriend,
 	getFriends,
+	getOneFriend,
 	removeFriend,
 } from "./controller/friendController.js";
 
@@ -18,6 +19,8 @@ const upload = multer();
 
 //Overview of friends
 app.get("/api/v1/friends", getFriends);
+//get one friend
+app.get("/api/v1/friends/:friendId", getOneFriend);
 //Post new friend
 app.post("/api/v1/friends", upload.none(), addFriend);
 //delete friend

@@ -12,6 +12,18 @@ export const getFriends = async (req, res) => {
 	}
 };
 
+export const getOneFriend = async (req, res) => {
+	const db = await getDb();
+	const docs = await db
+		.collection(COL)
+		.find({ _id: new ObjectId(req.params.friendId) })
+		.toArray();
+	if (docs === null) res.end();
+	else {
+		res.json(docs);
+	}
+};
+
 export const addFriend = async (req, res) => {
 	const db = await getDb();
 	const result = await db.collection(COL).insertOne(req.body);
