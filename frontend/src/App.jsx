@@ -11,6 +11,8 @@ import Navigation from "./components/navigation/Navigation";
 import Footer from "./components/footer/Footer";
 
 import "./App.css";
+import Login from "./pages/Login";
+import Protect from "./components/Protect";
 
 function App() {
 	return (
@@ -18,9 +20,12 @@ function App() {
 			<BrowserRouter>
 				<Navigation />
 				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/:friendId" element={<Details />} />
-					<Route path="/addFriend" element={<Form />} />
+					<Route path="/" element={<Login />} />
+					<Route element={<Protect />}>
+						<Route path="/home" element={<Home />} />
+						<Route path="/:friendId" element={<Details />} />
+						<Route path="/addFriend" element={<Form />} />
+					</Route>
 				</Routes>
 				<Footer />
 			</BrowserRouter>
